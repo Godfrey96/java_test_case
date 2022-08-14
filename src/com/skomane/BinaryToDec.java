@@ -3,18 +3,18 @@ package com.skomane;
 import java.util.Scanner;
 
 public class BinaryToDec {
-    public void convertBinToDec(){
+    public void convertBinToDec() {
         int binary;
         int decimal = 0;
         int i = 1;
         int rem;
 
-        Scanner input = new Scanner(System.in);
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.print("Enter a Binary Number: ");
+            binary = input.nextInt();
+        }
 
-        System.out.print("Enter a Binary Number: ");
-        binary = input.nextInt();
-
-        while (binary != 0){
+        while (binary != 0) {
             rem = binary % 10;
             decimal = decimal + (rem * i);
             i = i * 2;
